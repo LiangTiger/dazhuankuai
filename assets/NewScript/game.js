@@ -21,6 +21,10 @@ cc.Class({
         player: {
             default: null,
             type: cc.Node
+        },
+        scoreDisplay:{
+            default:null,
+            type:cc.Label
         }
         // foo: {
         //     // ATTRIBUTES:
@@ -48,6 +52,7 @@ cc.Class({
         var newBlock = cc.instantiate(this.blockPrefab)
         this.node.addChild(newBlock);
         newBlock.setPosition(this.getNewBlockPosition());
+        newBlock.getComponent('block').game=this;
     },
     getNewBlockPosition: function () {
         var randX = 0;
@@ -61,4 +66,8 @@ cc.Class({
     },
 
     // update (dt) {},
+    gainScore:function(){
+        this.score+=1;
+        this.scoreDisplay.string='score:'+this.score.toString();
+    }
 });

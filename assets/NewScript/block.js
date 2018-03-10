@@ -10,7 +10,15 @@
 
 cc.Class({
     extends: cc.Component,
-
+    getPlayerDistance:function(){
+        var playerPos=this.game.player.getPosition();
+        var dist=cc.pDistance(this.node.position,playerPos);
+        return dist;
+    },
+    onPicked:function(){
+        this.game.spawnNewStar();
+        this.node.destroy();
+    },
     properties: {
         // foo: {
         //     // ATTRIBUTES:
@@ -27,7 +35,7 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        pickRadius:0,
+        pickRadius:10,
         game:{
             default:null,
             serializable:false
@@ -42,5 +50,10 @@ cc.Class({
 
     },
 
-    // update (dt) {},
+    update (dt) {
+        if(this.getPlayerDistance()<this.pickRadius){
+            this.onPicked();
+            return;
+        }
+    },
 });

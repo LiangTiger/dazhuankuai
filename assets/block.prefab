@@ -10,7 +10,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "zhuankuai",
+    "_name": "block",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -19,13 +19,10 @@
     "_components": [
       {
         "__id__": 2
-      },
-      {
-        "__id__": 3
       }
     ],
     "_prefab": {
-      "__id__": 4
+      "__id__": 3
     },
     "_id": "",
     "_opacity": 255,
@@ -44,8 +41,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 40,
-      "height": 40
+      "width": 28,
+      "height": 29
     },
     "_rotationX": 0,
     "_rotationY": 0,
@@ -64,40 +61,19 @@
     "groupIndex": 0
   },
   {
-    "__type__": "cc.Sprite",
+    "__type__": "c34bbnEgoRCRronP2C/QlCV",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "_spriteFrame": {
-      "__uuid__": "093c321a-1898-421d-b13b-e9d2db35dbf5"
-    },
-    "_type": 0,
-    "_sizeMode": 1,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_atlas": null
-  },
-  {
-    "__type__": "76530TOYFpBpJTMpOPcfrG+",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "pickRadius": 10
+    "padding": 0,
+    "spacing": 0,
+    "cols": 0,
+    "brickPrefab": null,
+    "bricksNumber": 20,
+    "init": null
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -107,7 +83,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "d1N/XkljJD+7tkFopUE6lC",
+    "fileId": "f0DCNXZ1lFI5fyE25cg66w",
     "sync": false
   }
 ]

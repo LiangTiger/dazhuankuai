@@ -12,19 +12,20 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        blockPrefab: {
-            default: null,
-            type: cc.Prefab
-        },
-        maxBlockDuration: 0,
-        minBlockDuration: 0,
-        player: {
-            default: null,
-            type: cc.Node
-        },
-        scoreDisplay:{
-            default:null,
-            type:cc.Label
+        padding:0,
+        spacing:0,
+        cols:0,
+        brickPrefab:cc.Prefab,
+        bricksNumber:0,
+        init(bricksNumber){
+            this.node.removeAllChildren();
+            this.bricksNumber=bricksNumber;
+            for(let i=0;i<this.bricksNumber;i++){
+                let brickNode=cc.instantiate(this.brickPrefab);
+                brickNode.parent=this.node;
+                brickNode.x=this.padding+(i%this.cols)*(brickNode.width+this.spacing)+brickNode.width/2;
+                brickNode.y=-this.padding-Math.floor(i/this.cols)*(brickNode.height+this.spacing)-brickNode.height/2
+            }
         }
         // foo: {
         //     // ATTRIBUTES:
@@ -45,29 +46,11 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad: function () {
-        this.spawnNewStar();
-    },
-    spawnNewStar: function () {
-        var newBlock = cc.instantiate(this.blockPrefab)
-        this.node.addChild(newBlock);
-        newBlock.setPosition(this.getNewBlockPosition());
-        newBlock.getComponent('block').game=this;
-    },
-    getNewBlockPosition: function () {
-        var randX = 0;
-        var randY = 100 + cc.random0To1() * 100;
-        var maxX = this.node.width / 2;
-        randX = cc.randomMinus1To1() * maxX;
-        return cc.p(randX, randY)
-    },
-    start() {
+    // onLoad () {},
+
+    start () {
 
     },
 
     // update (dt) {},
-    gainScore:function(){
-        this.score+=1;
-        this.scoreDisplay.string='score:'+this.score.toString();
-    }
 });

@@ -10,26 +10,17 @@
 
 cc.Class({
     extends: cc.Component,
-
-    properties: {
-        gameView:require('GameView'),
-        ball:require('ball'),
-        paddle:require('Paddle'),
-        brickLayout:require('BrickLayout'),
-        overPanel:require('OverPanel'),
+    onLoad:function(){
+            this.node.parent.on('touchmove',(event)=>{
+                let touchPoint=this.node.parent.convertToNodeSpace(event.getLocation());
+                this.node.x=touchPoint.x;
+            })
+        },
+    
+    init(){
+        this.node.x=300;
     },
-    onload:function(){
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN,(event)=>{
-            if(event.keyCode===cc.KEY.back){
-                cc.director.end();
-            }
-        })
-        this.physic
-    },
-
-
     start () {
 
     },
-
 });

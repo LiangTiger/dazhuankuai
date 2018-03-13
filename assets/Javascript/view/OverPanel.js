@@ -12,15 +12,8 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        onLoad:function(){
-            this.node.parent.on('touchmove',(event)=>{
-                let touchPoint=this.node.parent.convertToNodeSpace(event.getLocation());
-                this.node.x=touchPoint.x;
-            })
-        },
-        init(){
-            this.node.x=300;
-        },
+        resultLabel:cc.Label,
+        scoreLabel:cc.Label,
         // foo: {
         //     // ATTRIBUTES:
         //     default: null,        // The default value will be used only when the component attaching
@@ -37,11 +30,28 @@ cc.Class({
         //     }
         // },
     },
-
+    onload:function(){
+        this.node.active=false;
+    },
     // LIFE-CYCLE CALLBACKS:
-
+    
     // onLoad () {},
-
+    init(gameCtl){
+        this.gameCtl=gameCtl,
+        this.node.active=false;
+    },
+    show(score,isWin){
+        this.node.active=true;
+        if(isWin){
+            this.resultLabel.string="YOU WIN!";
+        }else{
+            this.resultLabel.string="YOU LOSE";
+        }
+        this.scoreLabel.string=score+'';
+    },
+    onBtnRestart(){
+        this.gameCtl.startGame();
+    },
     start () {
 
     },

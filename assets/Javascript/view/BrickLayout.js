@@ -20,22 +20,6 @@ cc.Class({
             type: cc.Prefab,
         },
         bricksNumber:0,
-       
-        // foo: {
-        //     // ATTRIBUTES:
-        //     default: null,        // The default value will be used only when the component attaching
-        //                           // to a node for the first time
-        //     type: cc.SpriteFrame, // optional, default is typeof default
-        //     serializable: true,   // optional, default is true
-        // },
-        // bar: {
-        //     get () {
-        //         return this._bar;
-        //     },
-        //     set (value) {
-        //         this._bar = value;
-        //     }
-        // },
     },
     init(bricksNumber){
         this.node.removeAllChildren();
@@ -46,7 +30,7 @@ cc.Class({
             brickNode.x=this.padding+(i%this.cols)*(brickNode.width+this.spacing)+brickNode.width/2;
             brickNode.y=-this.padding-Math.floor(i/this.cols)*(brickNode.height+this.spacing)-brickNode.height/2
         }
-    }
+    },
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {},

@@ -72,7 +72,7 @@ cc.Class({
     },
 
     onBallContactGround(ballNode, groundNode) {
-        this.stopGame();
+        this.ball.init(this);
     },
 
     onBallContactPaddle(ballNode, paddleNode) {

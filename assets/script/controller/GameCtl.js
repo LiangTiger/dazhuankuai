@@ -35,7 +35,6 @@ cc.Class({
     init() {
         this.physicsManager.enabled = true;
         this.gameModel.init();
-
         this.gameView.init(this);
         this.ball.init(this);
         this.paddle.init();

@@ -17,14 +17,13 @@ cc.Class({
 
     init(gameCtl) {
         this.gameCtl = gameCtl;
-        setInterval(
-            function(){for(let i=0;i<this.ballNumber;i++){
+        for(let i=0;i<this.ballNumber;i++){
             let ballNode=cc.instantiate(this.ballPrefab);
             ballNode.parent=this.node;
             ballNode.position = cc.v2(360,270);
             ballNode.getComponent(cc.RigidBody).linearVelocity = cc.v2(800,800);
             
-        }},10)
+        }
     },
     
     onBeginContact(contact, self, other) {

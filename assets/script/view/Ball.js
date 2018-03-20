@@ -11,13 +11,20 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        
+        ballPrefab:cc.Prefab,
+        ballNumber:0,
     },
 
     init(gameCtl) {
         this.gameCtl = gameCtl;
-        this.node.position = cc.v2(360,270);//初始化位置
-        this.getComponent(cc.RigidBody).linearVelocity = cc.v2(800,800);//初始化速度
+        setInterval(
+            function(){for(let i=0;i<this.ballNumber;i++){
+            let ballNode=cc.instantiate(this.ballPrefab);
+            ballNode.parent=this.node;
+            ballNode.position = cc.v2(360,270);
+            ballNode.getComponent(cc.RigidBody).linearVelocity = cc.v2(800,800);
+            
+        }},10)
     },
     
     onBeginContact(contact, self, other) {

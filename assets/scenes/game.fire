@@ -437,7 +437,7 @@
     "gameView": {
       "__id__": 13
     },
-    "ball": {
+    "ballLayout": {
       "__id__": 14
     },
     "paddle": {
@@ -448,6 +448,9 @@
     },
     "overPanel": {
       "__id__": 35
+    },
+    "ball": {
+      "__uuid__": "83a01cb8-ed58-45f3-baff-06bee6a01a67"
     }
   },
   {
@@ -463,7 +466,7 @@
     }
   },
   {
-    "__type__": "d1142Rj0TpFMJKRZHl6gNOd",
+    "__type__": "2b604lFCj5Or5KiITxzV5MK",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -473,11 +476,11 @@
     "ballPrefab": {
       "__uuid__": "83a01cb8-ed58-45f3-baff-06bee6a01a67"
     },
-    "ballNumber": 3
+    "ballNumber": 1
   },
   {
     "__type__": "cc.Node",
-    "_name": "ball",
+    "_name": "ball_layout",
     "_objFlags": 0,
     "_parent": {
       "__id__": 16

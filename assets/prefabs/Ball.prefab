@@ -96,17 +96,6 @@
     "_atlas": null
   },
   {
-    "__type__": "d1142Rj0TpFMJKRZHl6gNOd",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "ballPrefab": null,
-    "ballNumber": 0
-  },
-  {
     "__type__": "cc.RigidBody",
     "_name": "",
     "_objFlags": 0,
@@ -149,6 +138,15 @@
       "y": 0
     },
     "_radius": 13.299999999999986
+  },
+  {
+    "__type__": "48d74m5+NJHNp8MORyUR653",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true
   },
   {
     "__type__": "cc.PrefabInfo",

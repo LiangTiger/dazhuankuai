@@ -1,5 +1,6 @@
+
 const GameModel = require('GameModel');
-const Ball=require('Ball')
+
 cc.Class({
     extends: cc.Component,
 
@@ -9,13 +10,12 @@ cc.Class({
         paddle: require('Paddle'),
         brickLayout: require('BrickLayout'),
         overPanel: require('OverPanel'),
-        ball:Ball
+        
     },
 
     // use this for initialization
     onLoad: function () {
-        //安卓返回键退出
-        console.log(this.ball.init())
+        console.log(this.ball)
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, (event) => {
             if (event.keyCode === cc.KEY.back) {
                 cc.director.end();
@@ -23,6 +23,7 @@ cc.Class({
         });
         this.physicsManager = cc.director.getPhysicsManager();
         this.gameModel = new GameModel();
+        this.ball=this.ballLayout.require('Ball')
         this.startGame();
 
     },
@@ -40,6 +41,7 @@ cc.Class({
         this.gameModel.init();
         this.gameView.init(this);
         this.ballLayout.init(this);
+        this.ball.init(this);
         this.paddle.init();
         this.brickLayout.init(this.gameModel.bricksNumber);
         this.overPanel.init(this);

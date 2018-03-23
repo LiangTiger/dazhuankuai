@@ -1,8 +1,12 @@
 const gameCtl=require("GameCtl")
 cc.Class({
     extends: cc.Component,
-    onLoad:function(){
-        console.log()
+    properties:{
+        
+    },
+    init(gameCtl){
+        this.gameCtl=gameCtl;
+        console.log(123)
     },
     onBeginContact(contact, self, other) {
         switch (other.tag) {
@@ -20,6 +24,6 @@ cc.Class({
                 break;
         }
     },
-
+    
 
 });

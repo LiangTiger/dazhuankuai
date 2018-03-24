@@ -15,7 +15,6 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
-        console.log(this.ball)
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, (event) => {
             if (event.keyCode === cc.KEY.back) {
                 cc.director.end();
@@ -23,7 +22,7 @@ cc.Class({
         });
         this.physicsManager = cc.director.getPhysicsManager();
         this.gameModel = new GameModel();
-        this.ball=this.ballLayout.require('Ball')
+        window.GameCtl=this;
         this.startGame();
 
     },
@@ -41,7 +40,6 @@ cc.Class({
         this.gameModel.init();
         this.gameView.init(this);
         this.ballLayout.init(this);
-        this.ball.init(this);
         this.paddle.init();
         this.brickLayout.init(this.gameModel.bricksNumber);
         this.overPanel.init(this);
@@ -77,7 +75,7 @@ cc.Class({
     },
     
     onBallContactGround(ballNode, groundNode) {
-        this.ballLayout.init(this);
+        // this.ballLayout.init(this);
     },
 
     onBallContactPaddle(ballNode, paddleNode) {

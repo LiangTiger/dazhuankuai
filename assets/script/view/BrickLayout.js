@@ -6,7 +6,6 @@ cc.Class({
         cols:0,
         brickPrefab: cc.Prefab,
         sumBrickPrefab:cc.Prefab,
-        bricksNumber: 0,
     },
 
     init(bricksNumber) {

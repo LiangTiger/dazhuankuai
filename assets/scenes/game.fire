@@ -982,8 +982,7 @@
     },
     "sumBrickPrefab": {
       "__uuid__": "79c53ccc-2c10-458d-ab35-31155b63463a"
-    },
-    "bricksNumber": 211.39999999999998
+    }
   },
   {
     "__type__": "cc.Widget",

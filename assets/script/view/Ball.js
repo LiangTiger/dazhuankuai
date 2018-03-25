@@ -27,6 +27,9 @@ cc.Class({
             case 4://球碰到墙
                 this.gameCtl.onBallContactWall(self.node, other.node);
                 break;
+            case 5:
+                this.gameCtl.onBallContactSumBrick(self.node,other.node);
+                break;
         }
     }, 
 

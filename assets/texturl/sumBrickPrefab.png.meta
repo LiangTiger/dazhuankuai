@@ -1,14 +1,14 @@
 {
   "ver": "1.0.0",
-  "uuid": "ff256ad7-8fc3-4e9c-871a-39ae5b44a6a4",
+  "uuid": "d5cf6664-b411-4ad8-ae0e-b7629c6af11a",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
   "subMetas": {
-    "block": {
+    "sumBrickPrefab": {
       "ver": "1.0.3",
-      "uuid": "093c321a-1898-421d-b13b-e9d2db35dbf5",
-      "rawTextureUuid": "ff256ad7-8fc3-4e9c-871a-39ae5b44a6a4",
+      "uuid": "cf984aa1-16c3-434e-9539-cd68b20f288a",
+      "rawTextureUuid": "d5cf6664-b411-4ad8-ae0e-b7629c6af11a",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

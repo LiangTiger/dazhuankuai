@@ -1,9 +1,7 @@
 
 const GameModel = require('GameModel');
-
 cc.Class({
     extends: cc.Component,
-
     properties: {
         gameView: require('GameView'),
         ballLayout: require('BallLayout'),
@@ -12,8 +10,6 @@ cc.Class({
         overPanel: require('OverPanel'),
         
     },
-
-    // use this for initialization
     onLoad: function () {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, (event) => {
             if (event.keyCode === cc.KEY.back) {
@@ -26,21 +22,11 @@ cc.Class({
         this.startGame();
 
     },
-
-    //this.physicsManager.debugDrawFlags =0;
-    // cc.PhysicsManager.DrawBits.e_aabbBit |
-    // cc.PhysicsManager.DrawBits.e_pairBit |
-    // cc.PhysicsManager.DrawBits.e_centerOfMassBit |
-    // cc.PhysicsManager.DrawBits.e_jointBit |
-    // cc.PhysicsManager.DrawBits.e_shapeBit
-    // ; 
-
     init() {
         this.physicsManager.enabled = true;
         this.gameModel.init();
         this.gameView.init(this);
         this.ballLayout.init(this.gameModel.ballNumber);
-        console.log(this.gameModel.bricksNumber)
         this.paddle.init();
         this.brickLayout.init(this.gameModel.bricksNumber);
         this.overPanel.init(this);
@@ -86,7 +72,10 @@ cc.Class({
     onBallContactWall(ballNode, brickNode) {
 
     },
-
+    onBallContactSumBrick(ballNode,sumBrick){
+        sumBrick.parent=null;
+        this.gameModel.addBall(1);
+    },
     onDestroy() {
         this.physicsManager.enabled = false;
     }

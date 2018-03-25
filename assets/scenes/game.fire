@@ -957,8 +957,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 35,
-      "y": 1202
+      "x": 37,
+      "y": 1150.7
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -975,13 +975,14 @@
       "__id__": 27
     },
     "_enabled": true,
-    "padding": 10,
-    "spacing": 10,
-    "cols": 10,
+    "space": 4,
+    "cols": 13,
     "brickPrefab": {
       "__uuid__": "f9e879a6-e559-49ae-a59f-f90493471375"
     },
-    "ballNumberSum": null,
+    "sumBrickPrefab": {
+      "__uuid__": "79c53ccc-2c10-458d-ab35-31155b63463a"
+    },
     "bricksNumber": 211.39999999999998
   },
   {
@@ -994,10 +995,10 @@
     "_enabled": true,
     "isAlignOnce": true,
     "_target": null,
-    "_alignFlags": 1,
-    "_left": 359,
-    "_right": 361,
-    "_top": 78,
+    "_alignFlags": 17,
+    "_left": 37,
+    "_right": 37,
+    "_top": 129.29999999999995,
     "_bottom": 730,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
@@ -1007,7 +1008,7 @@
     "_isAbsBottom": true,
     "_isAbsHorizontalCenter": true,
     "_isAbsVerticalCenter": true,
-    "_originalWidth": 0,
+    "_originalWidth": 646,
     "_originalHeight": 0
   },
   {

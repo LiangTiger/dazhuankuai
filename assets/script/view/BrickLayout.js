@@ -2,11 +2,10 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        padding: 0,
-        spacing: 0,
-        cols: 0,
+        space:0,
+        cols:0,
         brickPrefab: cc.Prefab,
-        ballNumberSum:cc.Prefab,
+        sumBrickPrefab:cc.Prefab,
         bricksNumber: 0,
     },
 
@@ -15,9 +14,18 @@ cc.Class({
         this.bricksNumber = bricksNumber;
         for (let i = 0; i < this.bricksNumber; i++) {
             let brickNode = cc.instantiate(this.brickPrefab);
-            brickNode.parent = this.node;
-            brickNode.x = this.padding + (i % this.cols) * (brickNode.width + this.spacing) + brickNode.width / 2;
-            brickNode.y = -this.padding - Math.floor(i / this.cols) * (brickNode.height + this.spacing) - brickNode.height / 2;
+            let sumBrickNode=cc.instantiate(this.sumBrickPrefab);
+            let random=Math.round(Math.random()*100);
+            console.log(random)
+            if(random<90){
+                brickNode.parent = this.node;
+                brickNode.x=(i%this.cols)*(brickNode.width+this.space);
+                brickNode.y=-Math.floor(i/this.cols)*(brickNode.height+this.space);
+            }else{
+                sumBrickNode.parent=this.node;
+                sumBrickNode.x=(i%this.cols)*(sumBrickNode.width+this.space);
+                sumBrickNode.y=-Math.floor(i/this.cols)*(brickNode.height+this.space);
+            }
         }
     }
 });

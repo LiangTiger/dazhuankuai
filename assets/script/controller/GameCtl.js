@@ -30,8 +30,6 @@ cc.Class({
         this.paddle.init();
         this.brickLayout.init(this.gameModel.bricksNumber);
         this.overPanel.init(this);
-
-
     },
 
     startGame() {
@@ -53,7 +51,6 @@ cc.Class({
 
     onBallContactBrick(ballNode, brickNode) {
         brickNode.parent = null;
-        this.gameModel.allBrick(1);
         this.gameModel.addScore(1);
         this.gameModel.minusBrick(1);
         this.gameView.updateScore(this.gameModel.score);
@@ -75,7 +72,7 @@ cc.Class({
     },
     onBallContactSumBrick(ballNode,sumBrick){
         sumBrick.parent=null;
-        this.gameModel.allBrick(1)
+        this.gameModel.minusBrick(1);
         this.gameModel.addBall(1);
         this.ballLayout.init(this.gameModel.ballNumber);
     },

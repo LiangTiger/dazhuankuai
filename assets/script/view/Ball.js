@@ -10,8 +10,6 @@
 
 cc.Class({
     extends: cc.Component,
-    properties: {
-    },
     onLoad(){
         this.gameCtl=window.GameCtl;
     },

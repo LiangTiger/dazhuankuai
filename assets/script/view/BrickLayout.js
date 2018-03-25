@@ -6,6 +6,7 @@ cc.Class({
         spacing: 0,
         cols: 0,
         brickPrefab: cc.Prefab,
+        ballNumberSum:cc.Prefab,
         bricksNumber: 0,
     },
 

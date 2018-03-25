@@ -39,7 +39,8 @@ cc.Class({
         this.physicsManager.enabled = true;
         this.gameModel.init();
         this.gameView.init(this);
-        this.ballLayout.init(this);
+        this.ballLayout.init(this.gameModel.ballNumber);
+        console.log(this.gameModel.bricksNumber)
         this.paddle.init();
         this.brickLayout.init(this.gameModel.bricksNumber);
         this.overPanel.init(this);

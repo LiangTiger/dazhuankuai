@@ -12,13 +12,13 @@ cc.Class({
 
     properties: {
         ballPrefab:cc.Prefab,
-        ballNumber:0,
     },
-
-    init(gameCtl) {
-        this.gameCtl = gameCtl;
-        for(let i=0;i<this.ballNumber;i++){
-            // this.node.removeAllChildren();
+    onLoad(){
+        console.log(this.ballNumber)
+    },
+    init(ballNumber) {
+         this.ballNumber=ballNumber;
+        for(let i=0;i<ballNumber;i++){
             let ballNode=cc.instantiate(this.ballPrefab);
             ballNode.parent=this.node;
             ballNode.position = cc.v2(360,270);

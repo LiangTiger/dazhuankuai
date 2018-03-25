@@ -981,6 +981,7 @@
     "brickPrefab": {
       "__uuid__": "f9e879a6-e559-49ae-a59f-f90493471375"
     },
+    "ballNumberSum": null,
     "bricksNumber": 211.39999999999998
   },
   {
@@ -1100,8 +1101,7 @@
     "_enabled": true,
     "ballPrefab": {
       "__uuid__": "83a01cb8-ed58-45f3-baff-06bee6a01a67"
-    },
-    "ballNumber": 1
+    }
   },
   {
     "__type__": "cc.Widget",
@@ -1163,8 +1163,7 @@
     "_enabled": true,
     "ballPrefab": {
       "__uuid__": "83a01cb8-ed58-45f3-baff-06bee6a01a67"
-    },
-    "ballNumber": 1
+    }
   },
   {
     "__type__": "ee4d2K/OiNLuIgnus4rRXdZ",

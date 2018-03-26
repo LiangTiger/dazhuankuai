@@ -48,14 +48,17 @@ cc.Class({
         this.physicsManager.enabled = false;
         this.overPanel.show(this.gameModel.score, this.gameModel.bricksNumber === 0);
     },
-
+    addBricks(){
+        this.brickLayout.addBrick();
+    },
     onBallContactBrick(ballNode, brickNode) {
         brickNode.parent = null;
         this.gameModel.addScore(1);
         this.gameModel.minusBrick(1);
         this.gameView.updateScore(this.gameModel.score);
-        if (this.gameModel.bricksNumber <= 0) {
-            this.stopGame();
+        if (this.gameModel.bricksNumber >= 5) {
+            this.addBricks();
+            console.log('add已运行')
         }
     },
     

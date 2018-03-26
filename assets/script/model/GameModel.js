@@ -15,6 +15,10 @@ cc.Class({
     },
     minusBrick(n){
         this.bricksNumber -= n;
+        if (this.bricksNumber >= 5) {
+            window.GameCtl.moveBricks();
+            window.GameCtl.addBricks();
+        }
     },
     addBall(sumBall){
         this.ballNumber+=sumBall;

@@ -10,6 +10,9 @@ cc.Class({
 
     init(bricksNumber) {
         this.node.removeAllChildren();
+        this.addBricks(bricksNumber)
+    },
+    addBricks(bricksNumber){
         this.bricksNumber = bricksNumber;
         for (let i = 0; i < this.bricksNumber; i++) {
             let brickNode = cc.instantiate(this.brickPrefab);
@@ -26,12 +29,11 @@ cc.Class({
             }
         }
     },
-    addBrick(addNumber) {
+    moveBricks() {
         var oldBricks=this.node.children;
         var oldBricksNumber=this.node.childrenCount;
-        var action=cc.moveBy(1,0,-200);
         for (let i = 0; i <oldBricksNumber; i++) {
-            oldBricks[i].runAction(action);
+            oldBricks[i].runAction(cc.moveBy(0.5,0,-270));
         }
     }
 });

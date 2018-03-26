@@ -48,18 +48,17 @@ cc.Class({
         this.physicsManager.enabled = false;
         this.overPanel.show(this.gameModel.score, this.gameModel.bricksNumber === 0);
     },
+    moveBricks(){
+        this.brickLayout.moveBricks();
+    },
     addBricks(){
-        this.brickLayout.addBrick();
+        this.brickLayout.addBricks(this.gameModel.bricksNumber);
     },
     onBallContactBrick(ballNode, brickNode) {
         brickNode.parent = null;
         this.gameModel.addScore(1);
         this.gameModel.minusBrick(1);
         this.gameView.updateScore(this.gameModel.score);
-        if (this.gameModel.bricksNumber >= 5) {
-            this.addBricks();
-            console.log('add已运行')
-        }
     },
     
     onBallContactGround(ballNode, groundNode) {

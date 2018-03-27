@@ -26,12 +26,14 @@ cc.Class({
         this.physicsManager.enabled = true;
         this.gameModel.init();
         this.gameView.init(this);
-        this.ballLayout.init(this.gameModel.ballNumber);
+        this.ballLayout.init(this.gameModel.initBalls);
         this.paddle.init();
         this.brickLayout.init(this.gameModel.bricksNumber);
         this.overPanel.init(this);
     },
-
+    ballRestart(){
+        this.ballLayout.init(this.gameModel.initBalls);
+    },
     startGame() {
         this.init();
     },
@@ -62,11 +64,13 @@ cc.Class({
     },
     
     onBallContactGround(ballNode, groundNode) {
-        // this.ballLayout.init(this);
+        ballNode.parent=null;
+        this.gameModel.minusBall(1)
     },
 
     onBallContactPaddle(ballNode, paddleNode) {
-
+        ballNode.parent=null;
+        this.gameModel.minusBall(1)
     },
 
     onBallContactWall(ballNode, brickNode) {
@@ -76,7 +80,6 @@ cc.Class({
         sumBrick.parent=null;
         this.gameModel.minusBrick(1);
         this.gameModel.addBall(1);
-        this.ballLayout.init(this.gameModel.ballNumber);
     },
     onDestroy() {
         this.physicsManager.enabled = false;

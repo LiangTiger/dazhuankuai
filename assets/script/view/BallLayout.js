@@ -16,12 +16,14 @@ cc.Class({
     init(ballNumber) {
         this.ballNumber=ballNumber;
         this.node.removeAllChildren();
+        let ballX=window.GameCtl.paddle.node.x;
+        let ballY=window.GameCtl.paddle.node.y;
+        console.log(this.node.position);
         for(let i=0;i<ballNumber;i++){
             let ballNode=cc.instantiate(this.ballPrefab);
             ballNode.parent=this.node;
-            ballNode.position = cc.v2(360,270);
+            ballNode.position = cc.v2(360,80);
             ballNode.getComponent(cc.RigidBody).linearVelocity = cc.v2(800,800);
-            
         }
     },
     

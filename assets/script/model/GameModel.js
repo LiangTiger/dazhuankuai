@@ -8,19 +8,26 @@ cc.Class({
     init(){
         this.score = 0;
         this.bricksNumber=65;
-        this.ballNumber=1;
+        this.initBalls=1
+        this.ballNumber=this.initBalls;
     },
     addScore(score){
         this.score += score;
     },
     minusBrick(n){
         this.bricksNumber -= n;
-        if (this.bricksNumber >= 5) {
+        if (this.bricksNumber <= 5) {
             window.GameCtl.moveBricks();
             window.GameCtl.addBricks();
         }
     },
+    minusBall(n){
+        this.ballNumber-=n;
+        if(this.ballNumber<1){
+            window.GameCtl.ballLayout.init(this.initBalls)
+        }
+    },
     addBall(sumBall){
-        this.ballNumber+=sumBall;
+        this.initBalls+=sumBall;
     }
 });

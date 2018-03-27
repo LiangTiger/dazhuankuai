@@ -12,6 +12,5 @@ cc.Class({
 
     init(){
         this.node.x = 360;
-    }
-
+    },
 });

@@ -8,8 +8,8 @@ cc.Class({
     init(){
         this.score = 0;
         this.bricksNumber=65;
-        this.initBalls=1
-        this.ballNumber=this.initBalls;
+        this.initBalls=1,
+        this.groundBalls=0
     },
     addScore(score){
         this.score += score;
@@ -19,15 +19,18 @@ cc.Class({
         if (this.bricksNumber <= 5) {
             window.GameCtl.moveBricks();
             window.GameCtl.addBricks();
+            this.bricksNumber=this.bricksNumber+65;
         }
     },
-    minusBall(n){
-        this.ballNumber-=n;
-        if(this.ballNumber<1){
+    groundBall(n){
+        this.groundBalls+=n;
+        if(this.initBalls==this.groundBalls){
             window.GameCtl.ballLayout.init(this.initBalls)
+            this.groundBalls=0;
         }
     },
     addBall(sumBall){
         this.initBalls+=sumBall;
+        this.groundBalls+=sumBall;
     }
 });

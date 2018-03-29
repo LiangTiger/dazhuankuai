@@ -65,12 +65,12 @@ cc.Class({
     
     onBallContactGround(ballNode, groundNode) {
         ballNode.parent=null;
-        this.gameModel.minusBall(1)
+        this.gameModel.groundBall(1)
     },
 
     onBallContactPaddle(ballNode, paddleNode) {
         ballNode.parent=null;
-        this.gameModel.minusBall(1)
+        this.gameModel.groundBall(1)
     },
 
     onBallContactWall(ballNode, brickNode) {

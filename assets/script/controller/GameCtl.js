@@ -53,8 +53,8 @@ cc.Class({
     moveBricks(){
         this.brickLayout.moveBricks();
     },
-    addBricks(){
-        this.brickLayout.addBricks(this.gameModel.bricksNumber);
+    addBricks(n){
+        this.brickLayout.addBricks(n);
     },
     onBallContactBrick(ballNode, brickNode) {
         brickNode.parent = null;

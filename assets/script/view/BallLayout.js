@@ -20,8 +20,8 @@ cc.Class({
         for(let i=0;i<initBalls;i++){
             let ballNode=cc.instantiate(this.ballPrefab);
             ballNode.parent=this.node;
-            ballNode.position = cc.v2(ballX,180);
-            ballNode.getComponent(cc.RigidBody).linearVelocity = cc.v2(800,800);
+            ballNode.position = cc.v2(ballX-(i*2),180-(i*2));
+            ballNode.getComponent(cc.RigidBody).linearVelocity = cc.v2(1000,1000);
         }
     },
     

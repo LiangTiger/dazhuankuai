@@ -7,7 +7,7 @@ cc.Class({
     },
     init(){
         this.score = 0;
-        this.bricksNumber=65;
+        this.bricksNumber=52;
         this.initBalls=1,
         this.groundBalls=0
     },
@@ -18,14 +18,14 @@ cc.Class({
         this.bricksNumber -= n;
         if (this.bricksNumber <= 5) {
             window.GameCtl.moveBricks();
-            window.GameCtl.addBricks();
-            this.bricksNumber=this.bricksNumber+65;
+            setTimeout(window.GameCtl.addBricks(26),500)
+            this.bricksNumber+=26;
         }
     },
     groundBall(n){
         this.groundBalls+=n;
         if(this.initBalls==this.groundBalls){
-            window.GameCtl.ballLayout.init(this.initBalls)
+            window.GameCtl.ballRestart()
             this.groundBalls=0;
         }
     },

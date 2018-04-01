@@ -8,6 +8,7 @@ cc.Class({
         paddle: require('Paddle'),
         brickLayout: require('BrickLayout'),
         overPanel: require('OverPanel'),
+        sightLine:require('SightLine')
         
     },
     onLoad: function () {
@@ -26,7 +27,7 @@ cc.Class({
         this.physicsManager.enabled = true;
         this.gameModel.init();
         this.gameView.init(this);
-        this.ballLayout.init(this.gameModel.initBalls);
+        this.sightLine.init();
         this.paddle.init();
         this.brickLayout.init(this.gameModel.bricksNumber);
         this.overPanel.init(this);

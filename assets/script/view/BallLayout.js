@@ -18,10 +18,14 @@ cc.Class({
         this.node.removeAllChildren();
         let ballX=window.GameCtl.paddle.node.x;
         for(let i=0;i<initBalls;i++){
-            let ballNode=cc.instantiate(this.ballPrefab);
-            ballNode.parent=this.node;
-            ballNode.position = cc.v2(ballX-(i*2),180-(i*2));
-            ballNode.getComponent(cc.RigidBody).linearVelocity = cc.v2(1000,1000);
+            let _this=this
+            setTimeout(function(){
+                let ballNode=cc.instantiate(_this.ballPrefab);
+                ballNode.parent=_this.node;
+                ballNode.position = cc.v2(ballX-(i*2),180-(i*2));
+                ballNode.getComponent(cc.RigidBody).linearVelocity = cc.v2(1000/(Math.round(Math.tan((90-window.GameCtl.sightLine.node.rotation)/57.2956))),1000);
+                console.log('123')
+            }(),5000)
         }
     },
     

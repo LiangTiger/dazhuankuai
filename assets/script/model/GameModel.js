@@ -25,7 +25,7 @@ cc.Class({
     groundBall(n){
         this.groundBalls+=n;
         if(this.initBalls==this.groundBalls){
-            window.GameCtl.ballRestart()
+            window.GameCtl.paddle.onLoad();
             this.groundBalls=0;
         }
     },

@@ -18,8 +18,6 @@ cc.Class({
             } else {
                 this.node.rotation =90-angle;
             }
-            console.log(Math.round(1000/(Math.tan((90-window.GameCtl.sightLine.node.rotation)/57.2956))))
-            console.log('sss'+Math.round(1000/(Math.tan((angle)/57.2956))))
         });
     },
 });

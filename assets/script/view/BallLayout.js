@@ -10,12 +10,12 @@ cc.Class({
         this.node.removeAllChildren();
         let ballX=window.GameCtl.paddle.node.x;
         for(let i=0;i<initBalls;i++){
-            let ballNode=cc.instantiate(this.ballPrefab);
-            ballNode.parent=this.node;
+            let _this=this;
                 setTimeout(() => {
+                    let ballNode=cc.instantiate(_this.ballPrefab);
+                    ballNode.parent=_this.node;
                     ballNode.position = cc.v2(ballX-i,180);
                     ballNode.getComponent(cc.RigidBody).linearVelocity = cc.v2(Math.round(1000/(Math.tan((90-window.GameCtl.sightLine.node.rotation)/57.2956))),1000); 
-                    console.log(i)
                 }, i*500);
             
         }

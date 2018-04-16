@@ -2,7 +2,7 @@
 cc.Class({
     extends: cc.Component,
     init(){
-        this.node.x = 360;
+        this.node.x = Math.round(window.GameCtl.paddle.node.x);
         this.node.rotation=0;
     },
     onLoad: function () {

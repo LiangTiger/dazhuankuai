@@ -2,13 +2,12 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        resultLabel:cc.Label,
         scoreLabel:cc.Label,
     },
 
     init(gameCtl){
         this.gameCtl = gameCtl;
-        this.node.active = false;
+        this.node.active = true;
     },
 
     show(score,isWin){
@@ -23,5 +22,6 @@ cc.Class({
 
     onBtnRestart(){
         this.gameCtl.startGame();
+        this.node.active=false;
     }
 });

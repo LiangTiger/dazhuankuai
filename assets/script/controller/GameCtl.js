@@ -65,16 +65,16 @@ cc.Class({
     },
     
     onBallContactGround(ballNode, groundNode) {
-        let ballPositionX=ballNode.position.x;
+        let ballPositionX=Math.round(ballNode.position.x);
         this.paddle.move(ballPositionX)
-        this.sightLine.init();
+        this.sightLine.move(ballPositionX)
         ballNode.parent=null;
         this.gameModel.groundBall(1)
         
     },
     onBallContactPaddle(ballNode, paddleNode) {
+        this.sightLine.move(paddleNode.position.x);
         ballNode.parent=null;
-        this.sightLine.init();
         this.gameModel.groundBall(1)
     },
 

@@ -27,7 +27,6 @@ cc.Class({
         this.physicsManager.enabled = true;
         this.gameModel.init();
         this.gameView.init(this);
-        this.sightLine.init();
         this.paddle.init();
         this.brickLayout.init(this.gameModel.bricksNumber);
         this.overPanel.init(this);
@@ -38,7 +37,9 @@ cc.Class({
     startGame() {
         this.init();
     },
-
+    gameOver(){
+        this.overPanel.init(this)
+    },
     pauseGame() {
         this.physicsManager.enabled = false;
     },
@@ -67,13 +68,11 @@ cc.Class({
     onBallContactGround(ballNode, groundNode) {
         let ballPositionX=Math.round(ballNode.position.x);
         this.paddle.move(ballPositionX)
-        this.sightLine.move(ballPositionX)
         ballNode.parent=null;
         this.gameModel.groundBall(1)
         
     },
     onBallContactPaddle(ballNode, paddleNode) {
-        this.sightLine.move(paddleNode.position.x);
         ballNode.parent=null;
         this.gameModel.groundBall(1)
     },

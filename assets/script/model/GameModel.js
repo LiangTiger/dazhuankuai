@@ -9,28 +9,29 @@ cc.Class({
         this.score = 0;
         this.bricksNumber=52;
         this.initBalls=1,
-        this.groundBalls=0
+        this.groundBalls=0,
+        this._cacheBall=0
     },
     addScore(score){
         this.score += score;
     },
+    updataBall(){
+        this.initBalls+=this._cacheBall;
+    },
     minusBrick(n){
         this.bricksNumber -= n;
-        if (this.bricksNumber <= 5) {
-            window.GameCtl.moveBricks();
-            setTimeout(window.GameCtl.addBricks(26),500)
-            this.bricksNumber+=26;
-        }
     },
     groundBall(n){
         this.groundBalls+=n;
         if(this.initBalls==this.groundBalls){
             window.GameCtl.paddle.onLoad();
+            window.GameCtl.moveBricks();
+            window.GameCtl.addBricks(13);
             this.groundBalls=0;
+            this.updataBall();
         }
     },
     addBall(sumBall){
-        this.initBalls+=sumBall;
-        this.groundBalls+=sumBall;
+        this._cacheBall+=sumBall;
     }
 });

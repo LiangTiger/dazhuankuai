@@ -33,7 +33,11 @@ cc.Class({
         var oldBricks=this.node.children;
         var oldBricksNumber=this.node.childrenCount;
         for (let i = 0; i <oldBricksNumber; i++) {
-            oldBricks[i].runAction(cc.moveBy(0.2,0,-108));
+            if(Math.round(oldBricks[i].y)>-900){
+                oldBricks[i].runAction(cc.moveBy(0.2,0,-54));
+            }else{
+                window.GameCtl.gameOver();
+            }
         }
     }
 });

@@ -66,15 +66,13 @@ cc.Class({
     },
     
     onBallContactGround(ballNode, groundNode) {
-        let ballPositionX=Math.round(ballNode.position.x);
-        this.paddle.move(ballPositionX)
         ballNode.parent=null;
-        this.gameModel.groundBall(1)
+        this.gameModel.groundBall(1,ballNode.position.x)
         
     },
     onBallContactPaddle(ballNode, paddleNode) {
         ballNode.parent=null;
-        this.gameModel.groundBall(1)
+        this.gameModel.groundBall(1,paddleNode.position.x)
     },
 
     onBallContactWall(ballNode, brickNode) {

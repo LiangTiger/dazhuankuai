@@ -8,7 +8,8 @@ cc.Class({
         paddle: require('Paddle'),
         brickLayout: require('BrickLayout'),
         overPanel: require('OverPanel'),
-        sightLine:require('SightLine')
+        sightLine:require('SightLine'),
+        audioCtl:require('AudioCtl')
         
     },
     onLoad: function () {
@@ -30,6 +31,7 @@ cc.Class({
         this.paddle.init();
         this.brickLayout.init(this.gameModel.bricksNumber);
         this.overPanel.init(this);
+        this.sightLine.init();
     },
     ballRestart(){
         this.ballLayout.init(this.gameModel.initBalls);
@@ -60,6 +62,7 @@ cc.Class({
     },
     onBallContactBrick(ballNode, brickNode) {
         brickNode.parent = null;
+        this.audioCtl.brickPlay();
         this.gameModel.addScore(1);
         this.gameView.updateScore(this.gameModel.score);
     },
@@ -70,7 +73,7 @@ cc.Class({
         
     },
     onBallContactWall(ballNode, brickNode) {
-
+        this.audioCtl.wallPlay();
     },
     onBallContactSumBrick(ballNode,sumBrick){
         sumBrick.parent=null;

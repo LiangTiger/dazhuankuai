@@ -2,7 +2,7 @@
 cc.Class({
     extends: cc.Component,
     init(){
-        this.node.x = window.GameCtl.paddle.position.x;
+        this.node.x = 360;
         this.node.rotation=0;
     },
     move(ballPositionX){

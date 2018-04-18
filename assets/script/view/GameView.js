@@ -9,7 +9,6 @@ cc.Class({
         this.gameCtl = gameCtl;
         this.scoreLabel.string = '0';
     },
-
     updateScore(score){
         this.scoreLabel.string = score;
     }

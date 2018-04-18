@@ -6,7 +6,6 @@ cc.Class({
     },
     move(ballPositionX){
         this.node.x=ballPositionX;
-        console.log('paddle')
     },
     onLoad(){
         this.node.once("touchstart",function(event){

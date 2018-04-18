@@ -1,6 +1,5 @@
 cc.Class({
     extends: cc.Component,
-
     properties: {
         space: 0,
         cols: 0,
@@ -17,7 +16,7 @@ cc.Class({
             let brickNode = cc.instantiate(this.brickPrefab);
             let sumBrickNode = cc.instantiate(this.sumBrickPrefab);
             let random = Math.round(Math.random() * 100);
-            if (random < 90) {
+            if (random < 95) {
                 brickNode.parent = this.node;
                 brickNode.x = (i % this.cols) * (brickNode.width + this.space);
                 brickNode.y = -Math.floor(i / this.cols) * (brickNode.height + this.space);

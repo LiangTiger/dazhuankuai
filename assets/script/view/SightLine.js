@@ -9,7 +9,7 @@ cc.Class({
         this.node.x=ballPositionX
     },
     onLoad() {
-        this.node.parent.on("touchmove", (event) => {
+        this.node.on("touchmove", (event) => {
             //将世界坐标转化为本地坐标
             let touchPoint = this.node.parent.convertToNodeSpace(event.getLocation());
             let nodePoint = this.node.position;

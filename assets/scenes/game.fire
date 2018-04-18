@@ -551,8 +551,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 300,
-      "height": 250
+      "width": 150,
+      "height": 200
     },
     "_rotationX": 0,
     "_rotationY": 0,
@@ -561,7 +561,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": 358,
-      "y": 126
+      "y": 106
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -591,7 +591,7 @@
     },
     "_fillStart": 0,
     "_fillRange": 0,
-    "_isTrimmedMode": false,
+    "_isTrimmedMode": true,
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_atlas": null

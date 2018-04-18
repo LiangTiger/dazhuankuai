@@ -2,13 +2,13 @@
 cc.Class({
     extends: cc.Component,
     init(){
-        this.node.x = Math.round(window.GameCtl.paddle.node.x);
+        this.node.x = window.GameCtl.paddle.position.x;
         this.node.rotation=0;
     },
     move(ballPositionX){
         this.node.x=ballPositionX
     },
-    onLoad: function () {
+    onLoad() {
         this.node.parent.on("touchmove", (event) => {
             //将世界坐标转化为本地坐标
             let touchPoint = this.node.parent.convertToNodeSpace(event.getLocation());

@@ -1,16 +1,12 @@
 
 cc.Class({
     extends: cc.Component,
-    properties:{
-        sightLine:require('SightLine')
-    },
     init(){
-        this.node.x = 360;
-        this.sightLine.init();
+        this.node.x = 360
     },
     move(ballPositionX){
         this.node.x=ballPositionX;
-        this.sightLine.move(ballPositionX);
+        console.log('paddle')
     },
     onLoad(){
         this.node.once("touchstart",function(event){

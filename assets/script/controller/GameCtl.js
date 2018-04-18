@@ -61,7 +61,6 @@ cc.Class({
     onBallContactBrick(ballNode, brickNode) {
         brickNode.parent = null;
         this.gameModel.addScore(1);
-        this.gameModel.minusBrick(1);
         this.gameView.updateScore(this.gameModel.score);
     },
     
@@ -70,17 +69,11 @@ cc.Class({
         this.gameModel.groundBall(1,ballNode.position.x)
         
     },
-    onBallContactPaddle(ballNode, paddleNode) {
-        ballNode.parent=null;
-        this.gameModel.groundBall(1,paddleNode.position.x)
-    },
-
     onBallContactWall(ballNode, brickNode) {
 
     },
     onBallContactSumBrick(ballNode,sumBrick){
         sumBrick.parent=null;
-        this.gameModel.minusBrick(1);
         this.gameModel.addBall(1);
     },
     onDestroy() {

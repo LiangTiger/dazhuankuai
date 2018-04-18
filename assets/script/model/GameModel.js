@@ -19,19 +19,16 @@ cc.Class({
         this.initBalls+=this._cacheBall;
         this._cacheBall=0
     },
-    minusBrick(n){
-        this.bricksNumber -= n;
-    },
     groundBall(n,ballPositionX){
         this.groundBalls+=n;
-        if(this.initBalls===this.groundBalls){
-            console.log(this.initBalls)
+        if(this.groundBalls===this.initBalls){
+            window.GameCtl.sightLine.move(ballPositionX)
             window.GameCtl.paddle.move(ballPositionX)
-            window.GameCtl.paddle.onLoad();
             window.GameCtl.moveBricks();
             window.GameCtl.addBricks(13);
-            this.groundBalls=0;
             this.updataBall();
+            this.groundBalls=0;
+            window.GameCtl.paddle.onLoad();
         }
     },
     addBall(sumBall){

@@ -937,7 +937,8 @@
     },
     "sumBrickPrefab": {
       "__uuid__": "79c53ccc-2c10-458d-ab35-31155b63463a"
-    }
+    },
+    "difficult": 90
   },
   {
     "__type__": "cc.Widget",
@@ -1094,17 +1095,17 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 10,
+      "width": 15,
       "height": 338
     },
-    "_rotationX": -2.3,
-    "_rotationY": -2.3,
+    "_rotationX": 0,
+    "_rotationY": 0,
     "_scaleX": 1,
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 358,
-      "y": 212
+      "x": 354.7,
+      "y": 208.7
     },
     "_skewX": 0,
     "_skewY": 0,

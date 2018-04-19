@@ -42,14 +42,17 @@ cc.Class({
     onBtnPutong(event){
         this.initBtn()
         event.currentTarget.color=new cc.Color(248, 68, 68, 255)
+        this.gameCtl.brickLayout.changeDif(90)
     },
     onBtnKunnan(event){
         this.initBtn()
         event.currentTarget.color=new cc.Color(248, 68, 68, 255)
+        this.gameCtl.brickLayout.changeDif(97)
     },
     onBtnDiyu(event){
         this.initBtn()
-        event.currentTarget.color=new cc.Color(248, 68, 68, 255)        
+        event.currentTarget.color=new cc.Color(248, 68, 68, 255)
+        this.gameCtl.brickLayout.changeDif(99)        
     }
 
 });

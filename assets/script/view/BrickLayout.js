@@ -5,10 +5,15 @@ cc.Class({
         cols: 0,
         brickPrefab: cc.Prefab,
         sumBrickPrefab: cc.Prefab,
+        difficult:90
+
     },
     init(bricksNumber) {
         this.node.removeAllChildren();
         this.addBricks(bricksNumber)
+    },
+    changeDif(n){
+        this.difficult=n
     },
     addBricks(bricksNumber){
         this.bricksNumber = bricksNumber;
@@ -16,7 +21,7 @@ cc.Class({
             let brickNode = cc.instantiate(this.brickPrefab);
             let sumBrickNode = cc.instantiate(this.sumBrickPrefab);
             let random = Math.round(Math.random() * 100);
-            if (random < 95) {
+            if (random < this.difficult) {
                 brickNode.parent = this.node;
                 brickNode.x = (i % this.cols) * (brickNode.width + this.space);
                 brickNode.y = -Math.floor(i / this.cols) * (brickNode.height + this.space);

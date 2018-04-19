@@ -12,7 +12,7 @@ cc.Class({
         audioCtl:require('AudioCtl')
         
     },
-    onLoad: function () {
+    onLoad() {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, (event) => {
             if (event.keyCode === cc.KEY.back) {
                 cc.director.end();
@@ -41,6 +41,7 @@ cc.Class({
     },
     gameOver(){
         this.overPanel.init(this)
+        this.onDestroy()
     },
     pauseGame() {
         this.physicsManager.enabled = false;

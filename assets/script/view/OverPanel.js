@@ -2,7 +2,18 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        
+        btnPutong:{
+            default:null,
+            type:cc.Node
+        },
+        btnKunnan:{
+            default:null,
+            type:cc.Node
+        },
+        btnDiyu:{
+            default:null,
+            type:cc.Node
+        },
     },
 
     init(gameCtl){
@@ -19,9 +30,26 @@ cc.Class({
         }
         this.scoreLabel.string = score+'';
     },
-
     onBtnRestart(){
         this.gameCtl.startGame();
         this.node.active=false;
+    },
+    initBtn(){
+        this.btnPutong.color=new cc.Color(255,255,255,255)
+        this.btnKunnan.color=new cc.Color(255,255,255,255)
+        this.btnDiyu.color=new cc.Color(255,255,255,255)
+    },
+    onBtnPutong(event){
+        this.initBtn()
+        event.currentTarget.color=new cc.Color(248, 68, 68, 255)
+    },
+    onBtnKunnan(event){
+        this.initBtn()
+        event.currentTarget.color=new cc.Color(248, 68, 68, 255)
+    },
+    onBtnDiyu(event){
+        this.initBtn()
+        event.currentTarget.color=new cc.Color(248, 68, 68, 255)        
     }
+
 });

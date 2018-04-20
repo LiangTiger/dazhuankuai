@@ -14,13 +14,41 @@ cc.Class({
             default:null,
             type:cc.Node
         },
+        rank:{
+            default:null,
+            type:cc.Node
+        },
+        skin:{
+            default:null,
+            type:cc.Node
+        },
+        setting:{
+            default:null,
+            type:cc.Node
+        },
+        rankPanel:{
+            default:null,
+            type:cc.Node
+        },
+        skinPanel:{
+            default:null,
+            type:cc.Node
+        },
+        settingPanel:{
+            default:null,
+            type:cc.Node
+        }
     },
 
     init(gameCtl){
         this.gameCtl = gameCtl;
         this.node.active = true;
     },
-
+    onLoad(){
+        this.rankPanel.active=false;
+        this.skinPanel.active=false;
+        this.settingPanel.active=false;
+    },
     show(score,isWin){
         this.node.active = true;
         if(isWin){
@@ -35,6 +63,9 @@ cc.Class({
         this.node.active=false;
     },
     initBtn(){
+        this.rankPanel.active=false;
+        this.skinPanel.active=false;
+        this.settingPanel.active=false;
         this.btnPutong.color=new cc.Color(255,255,255,255)
         this.btnKunnan.color=new cc.Color(255,255,255,255)
         this.btnDiyu.color=new cc.Color(255,255,255,255)
@@ -53,6 +84,17 @@ cc.Class({
         this.initBtn()
         event.currentTarget.color=new cc.Color(248, 68, 68, 255)
         this.gameCtl.brickLayout.changeDif(99)        
+    },
+    onBtnRank(event){
+        this.initBtn()
+        this.rankPanel.active=!this.rankPanel.active
+    },
+    onBtnSkin(event){
+        this.initBtn()
+        this.skinPanel.active=!this.skinPanel.active
+    },
+    onBtnSetting(event){
+        this.initBtn()
+        this.settingPanel.active=!this.settingPanel.active
     }
-
 });

@@ -37,6 +37,10 @@ cc.Class({
         settingPanel:{
             default:null,
             type:cc.Node
+        },
+        rankList:{
+            default:null,
+            type:cc.Node
         }
     },
 
@@ -70,6 +74,18 @@ cc.Class({
         this.btnKunnan.color=new cc.Color(255,255,255,255)
         this.btnDiyu.color=new cc.Color(255,255,255,255)
     },
+    rankInit(){
+        this.skinPanel.removeAllChildren()
+        var node=new cc.Node('Label');
+        node.width='100';
+        node.height='40'
+        node.string="123123";
+        node.color=new cc.Color(255,255,255,255)
+        var sp=node.addComponent(cc.Sprite)
+        sp.spriteFrame=this.rankList
+        node.parent=this.skinPanel;
+        console.log(node)
+    },
     onBtnPutong(event){
         this.initBtn()
         event.currentTarget.color=new cc.Color(248, 68, 68, 255)
@@ -86,15 +102,16 @@ cc.Class({
         this.gameCtl.brickLayout.changeDif(99)        
     },
     onBtnRank(event){
-        this.initBtn()
+        
+        this.rankInit()
         this.rankPanel.active=!this.rankPanel.active
     },
     onBtnSkin(event){
-        this.initBtn()
+        
         this.skinPanel.active=!this.skinPanel.active
     },
     onBtnSetting(event){
-        this.initBtn()
+        
         this.settingPanel.active=!this.settingPanel.active
     }
 });

@@ -82,6 +82,30 @@ cc.Class({
     },
     onDestroy() {
         this.physicsManager.enabled = false;
+    },
+    login(){
+        wx.login({
+            success:function(){
+                wx.getUserInfo({
+                    fail:function(res){
+                        if (res.errMsg.indexOf('auth deny') > -1 ||     res.errMsg.indexOf('auth denied') > -1 ) {
+                            // 处理用户拒绝授权的情况
+                          }
+                    }
+                })
+            }
+        }),
+        wx.getSetting({
+            success: function (res) {
+              var authSetting = res.authSetting
+              if (authSetting['scope.userInfo'] === true) {
+                // 用户已授权，可以直接调用相关 API
+              } else if (authSetting['scope.userInfo'] === false){
+                // 用户已拒绝授权，再调用相关 API 或者 wx.authorize 会失败，需要引导用户到设置页面打开授权开关
+              } else {
+                // 未询问过用户授权，调用相关 API 或者 wx.authorize 会弹窗询问用户
+              }
+            }
+          })
     }
-
 });

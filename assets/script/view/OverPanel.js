@@ -75,16 +75,11 @@ cc.Class({
         this.btnDiyu.color=new cc.Color(255,255,255,255)
     },
     rankInit(){
-        this.skinPanel.removeAllChildren()
-        var node=new cc.Node('Label');
-        node.width='100';
-        node.height='40'
-        node.string="123123";
-        node.color=new cc.Color(255,255,255,255)
-        var sp=node.addComponent(cc.Sprite)
+        var nodeLabel=new cc.Node('Label');
+        var sp=nodeLabel.addComponent(cc.Sprite)
         sp.spriteFrame=this.rankList
-        node.parent=this.skinPanel;
-        console.log(node)
+        sp.node.position=cc.v2(300,200)
+        sp.node.parent=this.node;
     },
     onBtnPutong(event){
         this.initBtn()

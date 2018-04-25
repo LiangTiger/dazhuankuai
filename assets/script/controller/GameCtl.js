@@ -3,11 +3,10 @@ const GameModel = require('GameModel');
 cc.Class({
     extends: cc.Component,
     properties: {
-        gameView: require('GameView'),
+        // gameView: require('GameView'),
         ballLayout: require('BallLayout'),
         paddle: require('Paddle'),
         brickLayout: require('BrickLayout'),
-        overPanel: require('OverPanel'),
         sightLine:require('SightLine'),
         audioCtl:require('AudioCtl')
         
@@ -27,10 +26,9 @@ cc.Class({
     init() {
         this.physicsManager.enabled = true;
         this.gameModel.init();
-        this.gameView.init(this);
+        // this.gameView.init(this);
         this.paddle.init();
         this.brickLayout.init(this.gameModel.bricksNumber);
-        this.overPanel.init(this);
         this.sightLine.init();
     },
     ballRestart(){
@@ -40,7 +38,6 @@ cc.Class({
         this.init();
     },
     gameOver(){
-        this.overPanel.init(this)
         this.onDestroy()
     },
     pauseGame() {
@@ -65,7 +62,7 @@ cc.Class({
         brickNode.parent = null;
         this.audioCtl.brickPlay();
         this.gameModel.addScore(1);
-        this.gameView.updateScore(this.gameModel.score);
+        // this.gameView.updateScore(this.gameModel.score);
     },
     
     onBallContactGround(ballNode, groundNode) {

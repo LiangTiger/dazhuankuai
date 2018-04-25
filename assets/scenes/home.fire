@@ -93,8 +93,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 480,
-      "y": 320
+      "x": 360,
+      "y": 640
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -472,7 +472,7 @@
       "__id__": 3
     },
     "component": "OverPanel",
-    "handler": "onBtnRestart",
+    "handler": "onBtnStart",
     "customEventData": ""
   },
   {
@@ -1333,9 +1333,6 @@
       "__id__": 26
     },
     "setting": null,
-    "rankPanel": null,
-    "skinPanel": null,
-    "settingPanel": null,
     "rankList": null
   },
   {

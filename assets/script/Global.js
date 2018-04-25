@@ -1,0 +1,3 @@
+window.Global={
+    difficult:null,
+}

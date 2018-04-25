@@ -105,8 +105,8 @@ cc.Class({
         
         this.skinPanel.active=!this.skinPanel.active
     },
-    onBtnSetting(event){
+    onBtnMessage(event){
         
-        this.settingPanel.active=!this.settingPanel.active
+        this.messagePanel.active=!this.messagePanel.active
     }
 });

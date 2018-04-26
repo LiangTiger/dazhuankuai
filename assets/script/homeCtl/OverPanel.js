@@ -46,12 +46,12 @@ cc.Class({
     //  难度选择按钮
     onBtnPutong(event){
         this.initBtn()
-        event.currentTarget.color=new cc.Color(248, 68, 68, 255)
+        event.currentTarget.color=new cc.Color(128, 243, 123,255)
         Global.difficult=90 
     },
     onBtnKunnan(event){
         this.initBtn()
-        event.currentTarget.color=new cc.Color(248, 68, 68, 255)
+        event.currentTarget.color=new cc.Color(240,181,56, 255)
         Global.difficult=97
     },
     onBtnDiyu(event){

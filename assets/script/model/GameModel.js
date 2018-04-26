@@ -6,14 +6,11 @@ cc.Class({
         ballNumber:0,
     },
     init(){
-        this.score = 0;
+        Global.score = 0;
         this.bricksNumber=52;
         this.initBalls=1,
         this.groundBalls=0,
         this._cacheBall=0
-    },
-    addScore(score){
-        this.score += score;
     },
     updataBall(){
         this.initBalls+=this._cacheBall;

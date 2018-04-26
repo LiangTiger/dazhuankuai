@@ -51,8 +51,8 @@ cc.Class({
     onBallContactBrick(ballNode, brickNode) {
         brickNode.parent = null;
         this.audioCtl.brickPlay();
-        this.gameModel.addScore(1);
-        this.gameView.updateScore(this.gameModel.score);
+        Global.score+=1
+        this.gameView.updateScore(Global.score);
     },
     onBallContactGround(ballNode, groundNode) {
         ballNode.parent=null;

@@ -17,7 +17,6 @@ cc.Class({
             let sumBrickNode = cc.instantiate(this.sumBrickPrefab);
             let random = Math.round(Math.random() * 100);
             if (random < Global.difficult) {
-                console.log(Global.difficult)
                 brickNode.parent = this.node;
                 brickNode.x = (i % this.cols) * (brickNode.width + this.space);
                 brickNode.y = -Math.floor(i / this.cols) * (brickNode.height + this.space);

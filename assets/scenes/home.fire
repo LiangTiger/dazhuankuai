@@ -1332,8 +1332,9 @@
     "skin": {
       "__id__": 26
     },
-    "setting": null,
-    "rankList": null
+    "message": {
+      "__id__": 30
+    }
   },
   {
     "__type__": "cc.Canvas",

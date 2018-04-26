@@ -30,16 +30,8 @@ cc.Class({
         this.initBtn()
     },
     onLoad(){
-
-    },
-    show(score,isWin){
-        this.node.active = true;
-        if(isWin){
-            this.resultLabel.string = 'YOU WIN!';
-        }else{
-            this.resultLabel.string = 'YOU LOSE!';
-        }
-        this.scoreLabel.string = score+'';
+        this.initBtn();
+        Global.difficult=90;
     },
     onBtnStart(){
         cc.director.loadScene("game")
@@ -49,6 +41,9 @@ cc.Class({
         this.btnKunnan.color=new cc.Color(255,255,255,255)
         this.btnDiyu.color=new cc.Color(255,255,255,255)
     },
+
+
+    //  难度选择按钮
     onBtnPutong(event){
         this.initBtn()
         event.currentTarget.color=new cc.Color(248, 68, 68, 255)
@@ -64,13 +59,16 @@ cc.Class({
         event.currentTarget.color=new cc.Color(248, 68, 68, 255)
         Global.difficult=99    
     },
+
+
+    //功能选项按钮    
     onBtnRank(event){
-       
+        cc.director.loadScene("rank")
     },
     onBtnSkin(event){
-
+        cc.director.loadScene("skin")
     },
     onBtnMessage(event){
-        
+        cc.director.loadScene("message")
     }
 });

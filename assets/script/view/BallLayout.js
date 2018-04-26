@@ -1,7 +1,6 @@
 
 cc.Class({
     extends: cc.Component,
-
     properties: {
         ballPrefab:cc.Prefab,
     },

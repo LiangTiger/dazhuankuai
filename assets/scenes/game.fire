@@ -745,9 +745,13 @@
       "__id__": 19
     },
     "_enabled": true,
-    "ballPrefab": {
-      "__uuid__": "83a01cb8-ed58-45f3-baff-06bee6a01a67"
-    }
+    "redBall": {
+      "__uuid__": "1f5dc0a7-3c2d-4b5f-987b-8f2e0d41bdef"
+    },
+    "earthBall": {
+      "__uuid__": "8cf9e9f4-da9e-495a-b142-ebd8880af706"
+    },
+    "gameBall": null
   },
   {
     "__type__": "cc.Node",
@@ -1497,7 +1501,7 @@
       "__id__": 6
     },
     "ballLayout": {
-      "__id__": 45
+      "__id__": 21
     },
     "paddle": {
       "__id__": 18
@@ -1510,18 +1514,6 @@
     },
     "audioCtl": {
       "__id__": 34
-    }
-  },
-  {
-    "__type__": "2b604lFCj5Or5KiITxzV5MK",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 19
-    },
-    "_enabled": true,
-    "ballPrefab": {
-      "__uuid__": "83a01cb8-ed58-45f3-baff-06bee6a01a67"
     }
   }
 ]

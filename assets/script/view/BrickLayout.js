@@ -35,6 +35,7 @@ cc.Class({
                 oldBricks[i].runAction(cc.moveBy(0.2,0,-54));
             }else{
                 window.GameCtl.gameOver();
+                return;
             }
         }
     }

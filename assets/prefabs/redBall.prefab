@@ -10,7 +10,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Ball",
+    "_name": "redBall",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -59,8 +59,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 403,
-      "y": 178
+      "x": 0,
+      "y": 0
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -105,18 +105,18 @@
     "_enabled": true,
     "_type": 2,
     "_allowSleep": true,
-    "_gravityScale": 0.5,
+    "_gravityScale": 1,
     "_linearDamping": 0,
     "_angularDamping": 0,
     "_linearVelocity": {
       "__type__": "cc.Vec2",
       "x": 0,
-      "y": 100
+      "y": 0
     },
     "_angularVelocity": 0,
     "_fixedRotation": true,
     "enabledContactListener": true,
-    "bullet": true
+    "bullet": false
   },
   {
     "__type__": "cc.PhysicsCircleCollider",
@@ -137,7 +137,7 @@
       "x": 0,
       "y": 0
     },
-    "_radius": 10
+    "_radius": 10.28
   },
   {
     "__type__": "d3588Lrn6BIVYvTZisDuBBW",
@@ -154,9 +154,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "83a01cb8-ed58-45f3-baff-06bee6a01a67"
+      "__uuid__": "1f5dc0a7-3c2d-4b5f-987b-8f2e0d41bdef"
     },
-    "fileId": "17H3bmu9xI7oB6YLe+gMG9",
+    "fileId": "23nc+Fr2hBWIcOXQVxAnOg",
     "sync": false
   }
 ]

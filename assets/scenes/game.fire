@@ -418,7 +418,7 @@
       "__id__": 7
     },
     "component": "Back",
-    "handler": "backToHome",
+    "handler": "gamingBack",
     "customEventData": ""
   },
   {

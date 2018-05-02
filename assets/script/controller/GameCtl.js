@@ -65,8 +65,9 @@ cc.Class({
         this.brickLayout.addBricks(n);
     },
     onBallContactBrick(ballNode, brickNode) {
-        brickNode.getChildByName('brickSum').getComponent(cc.Label).string-=1
-        if(brickNode.getChildByName('brickSum').getComponent(cc.Label).string==0){
+        let brickNodeSum=brickNode.getChildByName('brickSum').getComponent(cc.Label)
+        brickNodeSum.string-=1
+        if(brickNodeSum.string==0){
             brickNode.parent = null;
             Global.score+=1;
             this.gameView.updateScore(Global.score);
@@ -78,7 +79,7 @@ cc.Class({
         this.gameModel.groundBall(1,ballNode.position.x)
     },
     onBallContactWall(ballNode, brickNode) {
-        this.audioCtl.wallPlay();
+        // this.audioCtl.wallPlay();
     },
     onBallContactSumBrick(ballNode,sumBrick){
         sumBrick.parent=null;

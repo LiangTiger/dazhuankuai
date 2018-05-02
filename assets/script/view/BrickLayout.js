@@ -15,12 +15,13 @@ cc.Class({
         for (let i = 0; i < this.bricksNumber; i++) {
             let brickNode = cc.instantiate(this.brickPrefab);
             let sumBrickNode = cc.instantiate(this.sumBrickPrefab);
-            let random = Math.round(Math.random() * 100);
+            let BrickSum=brickNode.getChildByName('brickSum').getComponent(cc.Label)
+            let random = Math.round(Math.random()*100);
             if (random < Global.difficult) {
-                brickNode.getChildByName('brickSum').getComponent(cc.Label).string=1
-                brickNode.parent = this.node;
-                brickNode.x = (i % this.cols) * (brickNode.width + this.space);
-                brickNode.y = -Math.floor(i / this.cols) * (brickNode.height + this.space);
+                    BrickSum.string=Math.round(window.Global.score/10)+1
+                    brickNode.parent = this.node;
+                    brickNode.x = (i % this.cols) * (brickNode.width + this.space);
+                    brickNode.y = -Math.floor(i / this.cols) * (brickNode.height + this.space);
             } else {
                 sumBrickNode.parent = this.node;
                 sumBrickNode.x = (i % this.cols) * (sumBrickNode.width + this.space);

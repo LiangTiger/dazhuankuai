@@ -47,17 +47,17 @@ cc.Class({
     onBtnPutong(event){
         this.initBtn()
         event.currentTarget.color=new cc.Color(128, 243, 123,255)
-        Global.difficult=90 
+        Global.difficult=80
     },
     onBtnKunnan(event){
         this.initBtn()
         event.currentTarget.color=new cc.Color(240,181,56, 255)
-        Global.difficult=97
+        Global.difficult=88
     },
     onBtnDiyu(event){
         this.initBtn()
         event.currentTarget.color=new cc.Color(248, 68, 68, 255)
-        Global.difficult=99    
+        Global.difficult=95    
     },
 
 

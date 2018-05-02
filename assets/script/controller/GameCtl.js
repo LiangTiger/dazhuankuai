@@ -65,10 +65,13 @@ cc.Class({
         this.brickLayout.addBricks(n);
     },
     onBallContactBrick(ballNode, brickNode) {
-        brickNode.parent = null;
+        brickNode.getChildByName('brickSum').getComponent(cc.Label).string-=1
+        if(brickNode.getChildByName('brickSum').getComponent(cc.Label).string==0){
+            brickNode.parent = null;
+            Global.score+=1;
+            this.gameView.updateScore(Global.score);
+        }
         this.audioCtl.brickPlay();
-        Global.score+=1
-        this.gameView.updateScore(Global.score);
     },
     onBallContactGround(ballNode, groundNode) {
         ballNode.parent=null;

@@ -7,7 +7,6 @@ cc.Class({
         gameBall:null,
     },
     onLoad(){
-        console.log(Global.gameBall)
         if(Global.gameBall=="redBall"){
             this.gameBall=this.redBall
         }else if(Global.gameBall=="earthBall"){
@@ -27,7 +26,7 @@ cc.Class({
                     ballNode.parent=_this.node;
                     ballNode.position = cc.v2(ballX,210);
                     ballNode.getComponent(cc.RigidBody).linearVelocity = cc.v2(Math.round(1000/(Math.tan((90-window.GameCtl.sightLine.node.rotation)/57.2956))),1000); 
-                }, i*200);
+                }, i*100);
             
         }
     },

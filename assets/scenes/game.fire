@@ -1409,7 +1409,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 15,
+      "width": 20,
       "height": 338
     },
     "_rotationX": 0,

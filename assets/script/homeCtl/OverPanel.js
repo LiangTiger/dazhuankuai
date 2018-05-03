@@ -31,7 +31,7 @@ cc.Class({
     },
     onLoad(){
         this.initBtn();
-        Global.difficult=90;
+        Global.difficult=70;
     },
     onBtnStart(){
         cc.director.loadScene("game")
@@ -47,17 +47,17 @@ cc.Class({
     onBtnPutong(event){
         this.initBtn()
         event.currentTarget.color=new cc.Color(128, 243, 123,255)
-        Global.difficult=85
+        Global.difficult=70
     },
     onBtnKunnan(event){
         this.initBtn()
         event.currentTarget.color=new cc.Color(240,181,56, 255)
-        Global.difficult=90
+        Global.difficult=80
     },
     onBtnDiyu(event){
         this.initBtn()
         event.currentTarget.color=new cc.Color(248, 68, 68, 255)
-        Global.difficult=95    
+        Global.difficult=90   
     },
 
 

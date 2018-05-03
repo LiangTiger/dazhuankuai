@@ -78,11 +78,29 @@ cc.Class({
         ballNode.parent=null;
         this.gameModel.groundBall(1,ballNode.position.x)
     },
-    onBallContactWall(ballNode, brickNode) {
-        // this.audioCtl.wallPlay();
-    },
     onBallContactSumBrick(ballNode,sumBrick){
+        this.audioCtl.brickPlay();
         sumBrick.parent=null;
         this.gameModel.addBall(1);
     },
+    onBallContactWall(ballNode,wall){
+
+    },
+    onBallContactTriangle(ballNode,triangle){
+        this.audioCtl.brickPlay();
+        setTimeout(() => {
+            triangle.parent=null
+        }, 4000);
+    },
+    onBallContactBlackHole(ballNode,blackHole){
+        ballNode.parent=null;
+        this.gameModel.initBalls-=1;
+        this.gameModel.groundBalls+=1;
+        if(this.gameModel.initBalls==0){
+            this.gameOver();
+        }
+        setTimeout(() => {
+            blackHole.parent=null
+        }, 8000);
+    }
 });

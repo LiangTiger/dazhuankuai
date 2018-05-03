@@ -823,6 +823,12 @@
     },
     "sumBrickPrefab": {
       "__uuid__": "79c53ccc-2c10-458d-ab35-31155b63463a"
+    },
+    "trianglePrefab": {
+      "__uuid__": "c97acc4e-05bf-4fb4-8030-8e8ba3cdfed4"
+    },
+    "blackHolePrefab": {
+      "__uuid__": "14c23d1f-e8cb-4750-8163-fa6a875624ad"
     }
   },
   {

@@ -95,7 +95,6 @@ cc.Class({
     onBallContactBlackHole(ballNode,blackHole){
         ballNode.parent=null;
         this.gameModel.initBalls-=1;
-        this.gameModel.groundBalls+=1;
         if(this.gameModel.initBalls==0){
             this.gameOver();
         }

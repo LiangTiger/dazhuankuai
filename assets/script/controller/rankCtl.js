@@ -6,8 +6,8 @@ cc.Class({
         userScore:cc.Label,
     },
     onLoad(){
-        var _userInfo=wx.getStorageSync('_userInfo')
-        this.userName.string=_userInfo.userName
-        this.userScore.string=_userInfo.userScore
+        // var _userInfo=wx.getStorageSync('_userInfo')
+        // this.userName.string=_userInfo.userName
+        // this.userScore.string=_userInfo.userScore
     }
 })

@@ -35,7 +35,7 @@ cc.Class({
                     blackHolePrefab.parent=this.node;
                     blackHolePrefab.x = (i % this.cols) * brickWidth;
                     blackHolePrefab.y = -Math.floor(i / this.cols) * brickHieght;
-                } else if (Math.random() > 0.3) {
+                } else if (Math.random()<0.3) {
                     sumBrickNode.parent = this.node;
                     sumBrickNode.x = (i % this.cols) * brickWidth;
                     sumBrickNode.y = -Math.floor(i / this.cols) * brickHieght;

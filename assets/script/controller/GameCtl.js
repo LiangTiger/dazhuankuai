@@ -9,6 +9,7 @@ cc.Class({
         sightLine:require('SightLine'),
         audioCtl:require('AudioCtl')
     },
+    //游戏初始化
     onLoad() {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, (event) => {
             if (event.keyCode === cc.KEY.back) {
@@ -33,22 +34,22 @@ cc.Class({
     },
     gameOver(){
         this.physicsManager.enabled = false;
-        let userInfo=wx.getStorageSync('_userInfo')||null
-            if(userInfo){
-                if(Global.score>userInfo.userScore){
-                    let userInfo={
-                        userName:Global.userInfo.nickName,
-                        userScore:Global.score
-                    }
-                    wx.setStorageSync('_userInfo',userInfo)
-                }
-            }else{
-                let userInfo={
-                    userName:Global.userInfo.nickName,
-                    userScore:Global.score
-                }
-                wx.setStorageSync('_userInfo',userInfo)
-            }
+        // let userInfo=wx.getStorageSync('_userInfo')||null
+        //     if(userInfo){
+        //         if(Global.score>userInfo.userScore){
+        //             let userInfo={
+        //                 userName:Global.userInfo.nickName,
+        //                 userScore:Global.score
+        //             }
+        //             wx.setStorageSync('_userInfo',userInfo)
+        //         }
+        //     }else{
+        //         let userInfo={
+        //             userName:Global.userInfo.nickName,
+        //             userScore:Global.score
+        //         }
+        //         wx.setStorageSync('_userInfo',userInfo)
+        //     }
         cc.director.loadScene("end")
     },
     pauseGame() {
@@ -90,16 +91,17 @@ cc.Class({
         this.audioCtl.brickPlay();
         setTimeout(() => {
             triangle.parent=null
-        }, 4000);
+        }, 3000);
     },
     onBallContactBlackHole(ballNode,blackHole){
         ballNode.parent=null;
         this.gameModel.initBalls-=1;
+        this.gameModel.groundBall(0,ballNode.position.x)
         if(this.gameModel.initBalls==0){
             this.gameOver();
         }
         setTimeout(() => {
             blackHole.parent=null
-        }, 8000);
+        }, 10000);
     }
 });

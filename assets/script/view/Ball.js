@@ -14,13 +14,13 @@ cc.Class({
             case 4: //球碰到墙
                 this.gameCtl.onBallContactWall(self.node, other.node);
                 break;
-            case 5:
+            case 5://球碰到多功能砖块
                 this.gameCtl.onBallContactSumBrick(self.node, other.node);
                 break;
-            case 6:
+            case 6://球碰到三角砖块
                 this.gameCtl.onBallContactTriangle(self.node, other.node);
                 break
-            case 7:
+            case 7://球碰到黑洞砖块
                 this.gameCtl.onBallContactBlackHole(self.node, other.node);
                 break
         }

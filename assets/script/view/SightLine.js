@@ -9,7 +9,7 @@ cc.Class({
         this.node.x=ballPositionX
     },
     onLoad() {
-        this.node.on("touchmove", (event) => {
+        this.node.parent.on("touchmove", (event) => {
             let touchPoint = this.node.parent.convertToNodeSpace(event.getLocation());
             let nodePoint = this.node.position;
             let angle = Math.round(Math.atan2(touchPoint.y - nodePoint.y, touchPoint.x - nodePoint.x) * 57.2956);

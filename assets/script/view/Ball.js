@@ -11,9 +11,9 @@ cc.Class({
             case 2: //球碰到地面
                 this.gameCtl.onBallContactGround(self.node, other.node);
                 break;
-            case 4: //球碰到墙
-                this.gameCtl.onBallContactWall(self.node, other.node);
-                break;
+            // case 4: //球碰到墙
+            //     this.gameCtl.onBallContactWall(self.node, other.node);
+            //     break;
             case 5://球碰到多功能砖块
                 this.gameCtl.onBallContactSumBrick(self.node, other.node);
                 break;

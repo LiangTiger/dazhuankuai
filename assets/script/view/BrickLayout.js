@@ -12,6 +12,10 @@ cc.Class({
         this.node.removeAllChildren();
         this.addBricks(bricksNumber)
     },
+    randomRotation(low,hight){
+        var _number=hight-low+1;
+        return Math.floor(Math.random()*_number+low)
+    },
     addBricks(bricksNumber) {
         this.bricksNumber = bricksNumber;
         for (let i = 0; i < this.bricksNumber; i++) {
@@ -31,18 +35,19 @@ cc.Class({
                 brickNode.x = (i % this.cols) * brickWidth;
                 brickNode.y = -Math.floor(i / this.cols) *brickHieght;
             } else {
-                if (Math.random() < 0.1) {
+                if (Math.random() < 0.05) {
                     blackHolePrefab.parent=this.node;
                     blackHolePrefab.x = (i % this.cols) * brickWidth;
                     blackHolePrefab.y = -Math.floor(i / this.cols) * brickHieght;
-                } else if (Math.random()<0.3) {
+                } else if (Math.random()<0.2) {
                     sumBrickNode.parent = this.node;
                     sumBrickNode.x = (i % this.cols) * brickWidth;
                     sumBrickNode.y = -Math.floor(i / this.cols) * brickHieght;
-                } else {
+                } else if(Math.random()<0.5){
                     triangleNode.parent = this.node;
                     triangleNode.x = (i % this.cols) * brickWidth;
                     triangleNode.y = -Math.floor(i / this.cols) * brickHieght;
+                    triangleNode.rotation=this.randomRotation(-180,180)
                 }
             }
         }

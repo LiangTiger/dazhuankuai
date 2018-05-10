@@ -102,7 +102,7 @@
     "_enabled": true,
     "_type": 0,
     "_allowSleep": true,
-    "_gravityScale": 1,
+    "_gravityScale": 0,
     "_linearDamping": 0,
     "_angularDamping": 0,
     "_linearVelocity": {
@@ -116,7 +116,7 @@
     "bullet": false
   },
   {
-    "__type__": "cc.CircleCollider",
+    "__type__": "cc.PhysicsCircleCollider",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -124,12 +124,17 @@
     },
     "_enabled": true,
     "tag": 5,
+    "_density": 1,
+    "_sensor": false,
+    "_friction": 0,
+    "_restitution": 0,
+    "body": null,
     "_offset": {
       "__type__": "cc.Vec2",
       "x": 0,
       "y": 0
     },
-    "_radius": 22
+    "_radius": 23
   },
   {
     "__type__": "cc.PrefabInfo",

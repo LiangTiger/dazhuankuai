@@ -83,10 +83,11 @@ cc.Class({
         this.audioCtl.brickPlay();
         sumBrick.parent=null;
         this.gameModel.addBall(1);
+        
     },
-    onBallContactWall(ballNode,wall){
+    // onBallContactWall(ballNode,wall){
 
-    },
+    // },
     onBallContactTriangle(ballNode,triangle){
         this.audioCtl.brickPlay();
         setTimeout(() => {

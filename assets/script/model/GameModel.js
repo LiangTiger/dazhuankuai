@@ -14,6 +14,9 @@ cc.Class({
     },
     updataBall(){
         this.initBalls+=this._cacheBall;
+        if(this.initBalls>=Global.difficult){
+            this.initBalls=Global.difficult
+        }
         this._cacheBall=0
     },
     groundBall(n,ballPositionX){

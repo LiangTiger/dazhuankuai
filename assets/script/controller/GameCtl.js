@@ -11,11 +11,6 @@ cc.Class({
     },
     //游戏初始化
     onLoad() {
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, (event) => {
-            if (event.keyCode === cc.KEY.back) {
-                cc.director.end();
-            }
-        });
         this.physicsManager = cc.director.getPhysicsManager();
         this.gameModel = new GameModel();
         window.GameCtl=this;
@@ -26,7 +21,6 @@ cc.Class({
         this.gameModel.init();
         this.gameView.init(this);
         this.paddle.init();
-        this.brickLayout.init(this.gameModel.bricksNumber);
         this.sightLine.init();
     },
     ballRestart(){
@@ -34,22 +28,22 @@ cc.Class({
     },
     gameOver(){
         this.physicsManager.enabled = false;
-        // let userInfo=wx.getStorageSync('_userInfo')||null
-        //     if(userInfo){
-        //         if(Global.score>userInfo.userScore){
-        //             let userInfo={
-        //                 userName:Global.userInfo.nickName,
-        //                 userScore:Global.score
-        //             }
-        //             wx.setStorageSync('_userInfo',userInfo)
-        //         }
-        //     }else{
-        //         let userInfo={
-        //             userName:Global.userInfo.nickName,
-        //             userScore:Global.score
-        //         }
-        //         wx.setStorageSync('_userInfo',userInfo)
-        //     }
+        let userInfo=wx.getStorageSync('_userInfo')||null
+            if(userInfo){
+                if(Global.score>userInfo.userScore){
+                    let userInfo={
+                        userName:Global.userInfo.nickName,
+                        userScore:Global.score
+                    }
+                    wx.setStorageSync('_userInfo',userInfo)
+                }
+            }else{
+                let userInfo={
+                    userName:Global.userInfo.nickName,
+                    userScore:Global.score
+                }
+                wx.setStorageSync('_userInfo',userInfo)
+            }
         cc.director.loadScene("end")
     },
     pauseGame() {
@@ -76,7 +70,8 @@ cc.Class({
         this.audioCtl.brickPlay();
     },
     onBallContactGround(ballNode, groundNode) {
-        ballNode.parent=null;
+        this.ballLayout.ballPool.put(ballNode)
+        // ballNode.parent=null
         this.gameModel.groundBall(1,ballNode.position.x)
     },
     onBallContactSumBrick(ballNode,sumBrick){
